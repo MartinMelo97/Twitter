@@ -2,13 +2,13 @@ from django.shortcuts import render
 from django.views.generic import View
 from django.contrib.auth.models import User
 from .models import Twixt
-from .forms import *
+#from .forms import *
 
 class ListViewTwix(View):
     """docstring for """
     def get(self, request):
-        template_name = 'base.html'
-        twixs = blog_posts.all()
+        user = User.objects.get(username= 'tecmartinmelo')
+        twixs = user.blog_posts.all()
         context = {
             'twits': twixs,
         }

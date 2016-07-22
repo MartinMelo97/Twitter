@@ -13,7 +13,7 @@ class Twixt(models.Model):
 	slug = models.SlugField(max_length=200,unique_for_date='creado',blank=True,null=True)
 
 	class Meta:
-		orderin = ('-creado',)
+		ordering = ('-fecha',)
 
 	def __str__(self):
 		return self.cuerpo
