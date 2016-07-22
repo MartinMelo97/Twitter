@@ -21,5 +21,6 @@ from twixter import urls as twixterUrls
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include(mainUrls, namespace = "main")),
-    url(r'^Hola/', include(twixterUrls, namespace = "twixter"))
+    url(r'^Tweexs/', include(twixterUrls, namespace = "twixter"))
 ]
+
