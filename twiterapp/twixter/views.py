@@ -8,8 +8,7 @@ class ListViewTwix(View):
     """docstring for """
     def get(self, arg):
         template_name = 'base.html'
-        #user = User.object.get()
-        twixs = user.blog_posts.all()
+        twixs = blog_posts.all()
         context = {
             'twits': twixs,
         }
