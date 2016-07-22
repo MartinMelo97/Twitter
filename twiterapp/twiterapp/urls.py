@@ -13,13 +13,13 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
-from main import urls as MainUrls
-from twixter import urls as TwixterUrls
+from main import urls as mainUrls
+from twixter import urls as twixterUrls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$' include(MainUrls, namespace = "main")),
-    url(r'^$' include(TwixterUrls, namespace = "twixter"))
+    url(r'^$', include(mainUrls, namespace = "main")),
+    url(r'^Hola/$', include(twixterUrls, namespace = "twixter"))
 ]
