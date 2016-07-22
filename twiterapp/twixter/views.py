@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic import View
 from django.contrib.auth.models import User
 from .models import Twixt
-from .forms import *
+#from .forms import *
 
 class ListViewTwix(View):
     """docstring for """
