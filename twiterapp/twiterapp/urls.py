@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from main import urls as MainUrls
+from twixter import urls as TwixterUrls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$' include(MainUrls, namespace = "main")),
+    url(r'^$' include(TwixterUrls, namespace = "twixter"))
 ]
