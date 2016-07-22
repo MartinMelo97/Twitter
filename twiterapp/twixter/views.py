@@ -6,7 +6,7 @@ from .forms import *
 
 class ListViewTwix(View):
     """docstring for """
-    def get(self, arg):
+    def get(self, request):
         template_name = 'base.html'
         twixs = blog_posts.all()
         context = {
@@ -16,7 +16,7 @@ class ListViewTwix(View):
 
 class DetailViewTiwx(View):
     """docstring for """
-    def get(self, arg, slug):
+    def get(self, request, slug):
         template_name = 'detalleTwix.html'
         post = Twixt.object.get(slug = slug)
         context = {
@@ -26,7 +26,7 @@ class DetailViewTiwx(View):
 
 class NewTwit(View):
     """docstring for NewTwit"""
-    def get(self, arg):
+    def get(self, request):
         template_name = 'NewTwixter.html'
         form = PostForm()
         context = {
